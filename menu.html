@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELLA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oranienbaum|PT+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+
+        <button class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+
+
+</button>
+
+
+        <nav>
+            <ul>
+                <li><a href="index.html">FORSIDE</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="logonyt-05.png" alt="logo"></div>
+    </header>
+
+<!--    indhold til modal vinduet-->
+    <div id="modal">
+        <div id="modal-content">
+            <button class="menu-item1">Close</button>
+            <h2 class="modal-navn"></h2>
+            <img class="modal-billede" src="" alt="">
+            <br>
+            <div class="modal-beskrivelse"></div><br>
+            <div class="modal-pris"></div><br>
+
+        </div>
+
+
+    </div>
+
+
+    <!--Knapper til filtrering af retter-->
+    <div class="top">
+        <button class="menu-item" data-kategori="Alle">Alle</button>
+        <button class="menu-item" data-kategori="Forretter">Forretter</button>
+        <button class="menu-item" data-kategori="Hovedretter">Hovedretter</button>
+        <button class="menu-item" data-kategori="Desserter">Desserter</button>
+        <button class="menu-item" data-kategori="Drikkevarer">Drikkevarer</button>
+        <h1></h1>
+    </div>
+
+    <section class="data-container"></section>
+
+    <!--Classes til json filen-->
+    <template class="data-template">
+      <article class="str">
+            <img src="" alt="">
+            <!--<div class="data data-navn"></div><br>-->
+            <h2></h2>
+            <div class="data data-id"></div>
+            <div class="data data-kategori"></div>
+            <div class="data data-beskrivelse"></div><br>
+            <div class="data data-pris"></div>
+
+        </article>
+
+    </template>
+
+
+    <footer>
+        <div class="footer"><br>
+            <aricle>•RESTAURENT BELLA•</aricle>
+            <aricle>ITALIENGADE 01, KBH•</aricle>
+            <aricle>TLF: +45 11 22 33 44•</aricle>
+            <aricle>BELLA@BELLA.DK•</aricle><br>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+
+   /* brugermenu*/
+    function onLoad() {
+
+
+        function toggleMenu() {
+            if (window.innerWidth <= 627) {
+                document.querySelector(".burger").classList.toggle("change");
+                document.querySelector("nav").classList.toggle("show");
+            }
+        }
+        document.querySelector(".burger").addEventListener("click", toggleMenu);
+        document.querySelector("ul").addEventListener("click", toggleMenu);
+
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        onLoad();
+    });
+
+
+
+
+    let retter;
+    let modal = document.querySelector("#modal");
+    let modtager = document.querySelector(".data-container"),
+        kategoriFilter = "Alle"; //filter variabel
+    document.addEventListener("DOMContentLoaded", hentJson);
+
+
+    /*hent json*/
+    async function hentJson() {
+        let myJson = await fetch("menu.json");
+        retter = await myJson.json();
+        console.log(retter);
+
+        visRetter();
+    }
+    document.querySelectorAll(".menu-item").forEach(knap => {
+        knap.addEventListener("click", filtrering)
+    });
+
+    /*Filtrering af retter*/
+    function filtrering() {
+        modtager.textContent = "";
+        kategoriFilter = this.getAttribute("data-kategori");
+        visRetter();
+    }
+
+    function visRetter() {
+
+        let temp = document.querySelector(".data-template");
+        document.querySelector("div h1").textContent = kategoriFilter;
+        //løb json filen igennem og lav en klon
+
+        retter.forEach(ret => {
+            if (ret.kategori == kategoriFilter || kategoriFilter == "Alle") {
+                let klon = temp.cloneNode(true).content;
+
+                //indsæt data
+
+                klon.querySelector("img").src = "mad_bella/" + ret.billede + ".jpg";
+                klon.querySelector("h2").textContent = ret.navn;
+
+                klon.querySelector(".data-pris").textContent = "Pris: " + ret.pris + ",-";
+
+
+
+
+                klon.querySelector("img").addEventListener("click", () => {
+                    visModal(ret);
+                });
+
+                // placer klon i html
+                modtager.appendChild(klon);
+            }
+        })
+    }
+
+    /*javascript til modal vindue*/
+    function visModal(retten) {
+        if (window.innerWidth > 627) {
+            console.log("hej");
+
+            modal.classList.add("vis");
+            modal.querySelector(".modal-billede").src = "mad_bella/" + retten.billede + ".jpg";
+            modal.querySelector(".modal-navn").textContent = retten.navn;
+
+            modal.querySelector(".modal-billede").alt = "Foto af" + retten.billede;
+            modal.querySelector(".modal-pris").textContent = "Pris: " + retten.pris + ",-";
+            modal.querySelector(".modal-beskrivelse").textContent = retten.beskrivelse;
+            modal.querySelector(".menu-item1").addEventListener("click", skjulModal);
+
+
+        }
+
+    }
+
+    function skjulModal() {
+        modal.classList.remove("vis");
+        // window.scrollTo(0);
+    }
+
+
+</script>
+
+</html>

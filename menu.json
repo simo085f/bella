@@ -1,0 +1,162 @@
+[
+  {
+    "navn": "Bruschetta",
+    "kategori": "Forretter",
+    "id": 11,
+    "beskrivelse": "Bruschetta med tomat, mozeralla og baskilikum",
+    "pris": 59,
+    "billede": "brushetta"
+  },
+  {
+    "navn": "Bruschetta Special",
+    "kategori": "Forretter",
+    "id": 12,
+    "beskrivelse": "Bruschetta med figne og gedeost",
+    "pris": 79,
+    "billede": "special"
+  },
+  {
+    "navn": "Mini pizzaer",
+    "kategori": "Forretter",
+    "id": 13,
+    "beskrivelse": "Mini pizzaer med forskellige toppings",
+    "pris": 89,
+    "billede": "mini"
+  },
+  {
+    "navn": "Ravioli",
+    "kategori": "Hovedretter",
+    "id": 14,
+    "beskrivelse": "Balsamiko og champingon ravioli",
+    "pris": 139,
+    "billede": "ravioli"
+  },
+  {
+    "navn": "Pizza Lala",
+    "kategori": "Hovedretter",
+    "id": 15,
+    "beskrivelse": "Pizza med gedeost og skinke",
+    "pris": 119,
+    "billede": "gedeost"
+  },
+  {
+    "navn": "Pizza Chiano",
+    "kategori": "Hovedretter",
+    "id": 16,
+    "beskrivelse": "Pizza med kylling og broccoli",
+    "pris": 119,
+    "billede": "kylling"
+  },
+  {
+    "navn": "Pizza Pablo",
+    "kategori": "Hovedretter",
+    "id": 17,
+    "beskrivelse": "Pizza med skinke, parmesan og ruccula",
+    "pris": 129,
+    "billede": "pizza"
+  },
+  {
+    "navn": "Gnocchi",
+    "kategori": "Hovedretter",
+    "id": 18,
+    "beskrivelse": "Gnocchi med bacon og spinat",
+    "pris": 139,
+    "billede": "gnocchi"
+  },
+  {
+    "navn": "Pasta Bella",
+    "kategori": "Hovedretter",
+    "id": 19,
+    "beskrivelse": "Pasta med tomat og baskilikum",
+    "pris": 109,
+    "billede": "pasta"
+  },
+  {
+    "navn": "Spaghetti Bolognese",
+    "kategori": "Hovedretter",
+    "id": 20,
+    "beskrivelse": "Spaghetti bolognese",
+    "pris": 119,
+    "billede": "spaghetti"
+  },
+  {
+    "navn": "Spaghetti Carbonara",
+    "kategori": "Hovedretter",
+    "id": 21,
+    "beskrivelse": "Spaghetti carbonara med rejer",
+    "pris": 149,
+    "billede": "reje"
+  },
+  {
+    "navn": "Panna Cotta",
+    "kategori": "Desserter",
+    "id": 22,
+    "beskrivelse": "Saltet panna cotta med karamel og kokos",
+    "pris": 79,
+    "billede": "panna"
+  },
+  {
+    "navn": "Italiensk Kage",
+    "kategori": "Desserter",
+    "id": 23,
+    "beskrivelse": "Italiensk pære & mandel kage",
+    "pris": 69,
+    "billede": "kage"
+  },
+  {
+    "navn": "Tiramisu",
+    "kategori": "Desserter",
+    "id": 24,
+    "beskrivelse": "Original tiramisu",
+    "pris": 89,
+    "billede": "tiramisu"
+  },
+  {
+    "navn": "Sodavand",
+    "kategori": "Drikkevarer",
+    "id": 25,
+    "beskrivelse": "Vælg mellem Coca Cola, Faxe Kondi og Fanta",
+    "pris": 49,
+    "billede": "cola"
+  },
+  {
+    "navn": "Castello di Meleto",
+    "kategori": "Drikkevarer",
+    "id": 26,
+    "beskrivelse": "Smagen er usædvanligt fyldig, intens, rig og med mørke, sunde bær, fulgt op af lidt krydderi, tobak og eg. Finishen viser årgangens blødhed.",
+    "pris": 199,
+    "billede": "vin"
+  },
+  {
+    "navn": "Barbera d'Alba Superiore 2015",
+    "kategori": "Drikkevarer",
+    "id": 27,
+    "beskrivelse": "Luksus Barbera med kirsebær, brombær, læder og en anelse flødekaramel. Fyldig smag med masser af moden mørk frugt, fin syre og en lang eftersmag.",
+    "pris": 159,
+    "billede": "Scarzello"
+  },
+  {
+    "navn": "Zenato, Ripassa 2015",
+    "kategori": "Drikkevarer",
+    "id": 28,
+    "beskrivelse": "Valpolicellaens intense kirsebærnoter og ranke struktur, kombineret med Amaronens intensitet, dybde, blomme og krydderi.",
+    "pris": 189,
+    "billede": "vino"
+  },
+  {
+    "navn": "Pinot Grigio 2016",
+    "kategori": "Drikkevarer",
+    "id": 29,
+    "beskrivelse": "Farven er strågul med grønne reflekser og aromaen minder om akacie blomster, mandel og hø.",
+    "pris": 179,
+    "billede": "hvidvin"
+  },
+  {
+    "navn": "Vand",
+    "kategori": "Drikkevarer",
+    "id": 30,
+    "beskrivelse": "Vand med eller uden brus",
+    "pris": 29,
+    "billede": "vand"
+  }
+]
